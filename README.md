@@ -1,3 +1,5 @@
+![Uploading Screenshot_٢٠٢١٠٤٢٠-٢٠١٣١٠.png…]()
+![Uploading Screenshot_٢٠٢١٠٤٢٠-٢٠١٣٢٧.png…]()
 ![Screenshot_٢٠٢١٠٤٢٠-٢٠١٣٠٥](https://user-images.githubusercontent.com/76610671/116993365-0f0b9080-ace0-11eb-9574-eea30db21782.png)
 # news_app_moh
 
