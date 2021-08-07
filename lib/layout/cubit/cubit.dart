@@ -54,6 +54,15 @@ class NewsCubit extends Cubit<NewsStates>
   }
 
   List<dynamic> business = [];
+  int selectedBusinessItem = 0;
+  bool isDesktop = false;
+  //List<bool> businessSelectedItem = [];
+
+  void setDesktop(bool value)
+  {
+    isDesktop = value;
+    emit(NewsSetDesktopState());
+  }
 
   void getBusiness()
   {
@@ -65,12 +74,16 @@ class NewsCubit extends Cubit<NewsStates>
       {
         'country':'eg',
         'category':'business',
-        'apiKey':'a583b95a86524282a13297888332b0e3',
+        'apiKey':'65f7f556ec76449fa7dc7c0069f040ca',
       },
     ).then((value)
     {
       //print(value.data['articles'][0]['title']);
       business = value.data['articles'];
+      // business.forEach((element)
+      // {
+      //   businessSelectedItem.add(false);
+      // });
       print(business[0]['title']);
 
       emit(NewsGetBusinessSuccessState());
@@ -78,6 +91,20 @@ class NewsCubit extends Cubit<NewsStates>
       print(error.toString());
       emit(NewsGetBusinessErrorState(error.toString()));
     });
+  }
+
+  void selectBusinessItem(index)
+  {
+    // for(int i = 0 ; i < businessSelectedItem.length ; i ++)
+    // {
+    //   if(i == index)
+    //     businessSelectedItem[i] = true;
+    //   else
+    //     businessSelectedItem[i] = false;
+    // }
+    selectedBusinessItem = index;
+
+    emit(NewsSelectBusinessItemState());
   }
 
   List<dynamic> sports = [];

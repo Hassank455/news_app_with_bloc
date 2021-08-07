@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,12 +10,18 @@ import 'package:news_app_moh/shared/cubit/cubit.dart';
 import 'package:news_app_moh/shared/cubit/states.dart';
 import 'package:news_app_moh/shared/network/local/cache_helper.dart';
 import 'package:news_app_moh/shared/network/remote/dio_helper.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import 'layout/cubit/cubit.dart';
 import 'layout/news_layout.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  //set minimum width and height on app
+ /* if (Platform.isWindows)
+    await DesktopWindow.setMinWindowSize(Size(350.0, 650.0));*/
+
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();

@@ -1,4 +1,3 @@
-
 abstract class NewsStates {}
 
 class NewsInitialState extends NewsStates {}
@@ -6,6 +5,10 @@ class NewsInitialState extends NewsStates {}
 class NewsBottomNavState extends NewsStates {}
 
 class NewsGetBusinessLoadingState extends NewsStates {}
+
+class NewsSetDesktopState extends NewsStates {}
+
+class NewsSelectBusinessItemState extends NewsStates {}
 
 class NewsGetBusinessSuccessState extends NewsStates {}
 
